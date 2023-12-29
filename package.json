@@ -1,0 +1,21 @@
+{
+  "name": "marker-clusterer",
+  "version": "1.0.0",
+  "description": "![img.png](img.png)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "百度地图",
+    "点聚合",
+    "抖动",
+    "闪烁",
+    "bMap",
+    "BMap",
+    "Clusterer",
+    "MarkerClusterer"
+  ],
+  "author": "xiyangzuile",
+  "license": "ISC"
+}
