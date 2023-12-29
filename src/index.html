@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>点聚合修复demo</title>
+  <style>
+      * {
+          padding: 0;
+          margin: 0;
+      }
+
+      #map-container {
+          width: 100%;
+          height: 100vh;
+      }
+  </style>
+</head>
+<body>
+<div id="map-container"></div>
+</body>
+<script src="https://api.map.baidu.com/api?v=3.0&ak=您的ak"></script>
+<script src="https://api.map.baidu.com/library/TextIconOverlay/1.2/src/TextIconOverlay.js"></script>
+<script src="./libs/MarkerClusterer.js"></script>
+<script>
+  window.onload = function () {
+    // 百度地图API功能
+    var map = new BMap.Map("map-container");
+    map.centerAndZoom(new BMap.Point(116.404, 39.915), 5);
+    map.enableScrollWheelZoom();
+
+
+    var MAX = 1000;
+    var markers = [];
+    var pt = null;
+    var i = 0;
+    for (; i < MAX; i++) {
+      pt = new BMap.Point(Math.random() * 40 + 85, Math.random() * 30 + 21);
+      markers.push(new BMap.Marker(pt));
+    }
+    //最简单的用法，生成一个marker数组，然后调用markerClusterer类即可。
+    new BMapLib.MarkerClusterer(map, {
+      markers: markers,        // 是否控制点标记
+      markerControl: false,
+      isAverangeCenter: true,
+      gridSize: 100,
+    });
+  }
+</script>
+</html>
